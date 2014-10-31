@@ -17,7 +17,7 @@ module Searchkick
                 # ActiveRecord
                 records.where(records.primary_key => grouped_hits.map{|hit| hit["_id"] }).to_a
               elsif records.respond_to?(:from_class)
-                records.where("ID(r1) in #{grouped_hits.map { |hit| hit['_id'].to_i }}")
+                records.array_load(grouped_hits.map { |hit| hit['_id'].to_i })
               elsif records.respond_to?(:all) and records.all.respond_to?(:for_ids)
                 # Mongoid 2
                 records.all.for_ids(grouped_hits.map{|hit| hit["_id"] }).to_a

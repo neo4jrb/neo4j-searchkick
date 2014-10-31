@@ -20,12 +20,14 @@ Or install it yourself as:
 
 Use with Searchkick as you would normally. See [Searchkick's documentation](https://github.com/ankane/searchkick) for more information.
 
-At the moment, this gem is not built with Neo4j performance in mind. ActiveRel's queries are not using parameters and as a result, you may take a performance 
-hit if using this in a busy production environment. Please see Github issues or contact Chris if you'd like to help or an update on the status.
-
 TODO:
 
 * Tests would be nice.
+
+## BEWARE!
+
+This gem is under development. Inclusion in your gemfile will use the Neo4j gem from the master branch. That branch is almost always stable but please be aware that 
+this may result in unexpected behavior.
 
 ## Contributing
 
