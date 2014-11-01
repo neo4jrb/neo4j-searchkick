@@ -1,5 +1,10 @@
 # Neo4j::Searchkick
 
+## What it do?
+
+This gem overrides the `Searchkick::Results#result` method to provide support for Neo4j relationship models created using the 
+[Neo4j ruby gem](https://github.com/neo4jrb/neo4j) ActiveRel module.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -26,8 +31,7 @@ TODO:
 
 ## BEWARE!
 
-This gem is under development. Inclusion in your gemfile will use the Neo4j gem from the master branch. That branch is almost always stable but please be aware that 
-this may result in unexpected behavior.
+This gem is under development. Inclusion in your gemfile will use the Neo4j gem from the master branch. That branch is almost always stable but please be aware that this may result in unexpected behavior.
 
 ## Contributing
 
