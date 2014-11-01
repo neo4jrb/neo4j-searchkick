@@ -5,6 +5,13 @@
 This gem overrides the `Searchkick::Results#result` method to provide support for Neo4j relationship models created using the 
 [Neo4j ruby gem](https://github.com/neo4jrb/neo4j) ActiveRel module.
 
+## Should I use it?
+
+If you want to search against a model, `MyActiveRelModel.search(property: value)`, then this will let you do that. But first,  be sure that this is really appropriate. Generally, Neo4j best practices say that if you find yourself wanting to start  searches based on relationship properties, you probably need to create another node. `Neo4j::ActiveRel`'s search capabilities are very basic for this reason.
+
+An obvious limitation of this gem, at the moment, is that it will immediately return relationship objects. Later on, it would 
+probably be better if it returned an array of IDs that you could use as part of a Cypher match to further filter your results.
+
 ## Installation
 
 Add this line to your application's Gemfile:
